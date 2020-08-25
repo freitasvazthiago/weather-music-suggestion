@@ -9,7 +9,6 @@ from spotipy.oauth2 import SpotifyClientCredentials
 from .models import Weather
 from django.core.serializers import serialize
 from .serializers import WeatherSerializer
-from rest_framework.renderers import JSONRenderer
 
 config = configparser.ConfigParser()
 
@@ -90,7 +89,7 @@ def getStatistic(request):
     return JsonResponse(
         {
             'data': {
-                'tst': content
+                'citys': content
             }
         }
     )
@@ -99,11 +98,4 @@ def addStatistic(city_id, city_name):
     
     w = Weather(city_id = city_id, city_name = city_name)
     w.save()
-    # return JsonResponse(
-    #     {
-    #         'data': {
-    #             'tst': content
-    #         }
-    #     }
-    # )
      
