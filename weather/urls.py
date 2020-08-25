@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('get', views.getSpotifyToken, name='getSpotifyToken'),
+    path('get', views.getStatistic, name='getStatistic')
 ]

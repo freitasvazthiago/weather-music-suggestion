@@ -6,7 +6,10 @@ import spotipy.oauth2 as oauth2
 
 from django.http import HttpResponse, JsonResponse
 from spotipy.oauth2 import SpotifyClientCredentials
-
+from .models import Weather
+from django.core.serializers import serialize
+from .serializers import WeatherSerializer
+from rest_framework.renderers import JSONRenderer
 
 config = configparser.ConfigParser()
 
@@ -38,6 +41,8 @@ def index(request):
         musics.append(getSpotifyPlaylistSongs(config.get('PLAYLIST', 'ROCK_PLAYLIST')))
     else:
         musics.append(getSpotifyPlaylistSongs(config.get('PLAYLIST', 'CLASSIC_PLAYLIST')))
+
+    addStatistic(r['id'], r['name'])
 
     return JsonResponse(
         {
@@ -75,3 +80,30 @@ def getSpotifyToken():
     spotify = spotipy.Spotify(auth=token)
 
     return spotify
+
+
+def getStatistic(request):
+    
+    serializer = WeatherSerializer(Weather.objects.all(), many=True)
+    content = serializer.data
+
+    return JsonResponse(
+        {
+            'data': {
+                'tst': content
+            }
+        }
+    )
+
+def addStatistic(city_id, city_name):
+    
+    w = Weather(city_id = city_id, city_name = city_name)
+    w.save()
+    # return JsonResponse(
+    #     {
+    #         'data': {
+    #             'tst': content
+    #         }
+    #     }
+    # )
+     

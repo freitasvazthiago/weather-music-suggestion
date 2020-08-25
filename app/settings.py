@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework_swagger',
-    'rest_framework'
+    'rest_framework',
+    'weather'
 ]
 
 REST_FRAMEWORK = {
