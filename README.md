@@ -33,9 +33,9 @@ As **weather** and **statistic** using as end-point purpose
 
 Deployed by **Heroku**
 
-* https://boiling-basin-96413.herokuapp.com/swagger/
-* https://boiling-basin-96413.herokuapp.com/weather/{city_name}
-* https://boiling-basin-96413.herokuapp.com/statistic/
+* https://weather-music-suggestion.herokuapp.com/swagger/
+* https://weather-music-suggestion.herokuapp.com/weather/{city_name}
+* https://weather-music-suggestion.herokuapp.com/statistic/
 
 ## Unit Tests
 
