@@ -21,7 +21,7 @@ docker-compose up
 
 ## Usage
 
-Havailables url's
+Availables url's
 
 * http://0.0.0.0:8000/swagger/
 * http://0.0.0.0:8000/weather/{city_name}
