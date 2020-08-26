@@ -21,7 +21,7 @@ docker-compose up
 
 ## Usage
 
-Availables url's
+availables url's
 
 * http://0.0.0.0:8000/swagger/
 * http://0.0.0.0:8000/weather/{city_name}
@@ -36,3 +36,18 @@ Deployed by **Heroku**
 * https://boiling-basin-96413.herokuapp.com/swagger/
 * https://boiling-basin-96413.herokuapp.com/weather/{city_name}
 * https://boiling-basin-96413.herokuapp.com/statistic/
+
+## Unit Tests
+
+Make sure that u are at docker-compose file root path  
+Run
+
+```bash
+docker-compose exec web bash
+```
+To enter at bash of web container
+
+```bash
+python3 manage.py test
+```
+For get asserts results.
