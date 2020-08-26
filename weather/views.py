@@ -86,7 +86,7 @@ def addStatistic(city_id, city_name):
     
     w = Weather(city_id = city_id, city_name = city_name)
     w.save()
-
+    
 class StatisticView(generics.GenericAPIView):
     def get(self, request):
         serializer = WeatherSerializer(Weather.objects.all(), many=True)
